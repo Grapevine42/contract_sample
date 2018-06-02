@@ -7,7 +7,6 @@ import logging
 
 from loopchain.blockchain import ScoreBase
 from loopchain.tools import ScoreDatabaseType, ScoreHelper
-from scoretool import ScoreHelperDatabase, SCOREResponse
 
 #
 class UserScore(ScoreBase):
