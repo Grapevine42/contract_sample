@@ -19,6 +19,14 @@
         "method":"get_user_contracts",
         "params":{"tx_hash":"string"},
         "description":"Issue Certificate"
+      },
+      {
+        "method":"query_foo1",
+        "params": {
+          "key":"string",
+          "value":"string"
+        },
+        "description":"Example of function in invoke."
       }
     ],
     "invoke":[
