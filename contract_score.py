@@ -57,7 +57,7 @@ class UserScore(ScoreBase):
         :param block:
         :return:
         """
-        #self.__init_db()
+        self.__init_db()
         data = transaction.get_data_string()
         tx_data = json.loads(data)
         logging.debug(self.LOG_PREFIX + "tx_data : %s", str(tx_data))
@@ -80,7 +80,7 @@ class UserScore(ScoreBase):
         :param query_request:
         :return:
         """
-        #self.__init_db()
+        self.__init_db()
         try:
             req = json.loads(query_request)
             q_method = req["method"]
