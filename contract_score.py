@@ -38,8 +38,8 @@ class UserScore(ScoreBase):
         else:
             self.__score_info = info
         self.__contract_db = None
-        self.__user_db = None
-        self.__db = ScoreHelperDatabase("MY_OWN_DB", ScoreHelper())
+        #self.__user_db = None
+        #self.__db = ScoreHelperDatabase("MY_OWN_DB", ScoreHelper())
 
     def __init_db(self):
         helper = ScoreHelper()
