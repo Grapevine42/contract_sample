@@ -8,7 +8,7 @@ import logging
 from loopchain.blockchain import ScoreBase
 from loopchain.tools import ScoreDatabaseType, ScoreHelper
 
-# 
+#
 class UserScore(ScoreBase):
     CONTRACT_DB_ID = 'contract'
     USER_DB_ID = 'user'
@@ -72,6 +72,34 @@ class UserScore(ScoreBase):
         else:
             logging.error(self.LOG_PREFIX + "Unknown transaction method : " + tx_method)
             raise Exception('method not found')
+
+    def tmp(self, log_func, id, params: dict, block=None):
+        # Use id as key.
+        key = params["key"]
+        value = params["value"]
+
+        try:
+            # Store string as value. And key and value must be BYTE type, not only string or object.
+            self.__db.put(key.encode(), value.encode())
+        except TypeError:
+            return SCOREResponse.exception("key or value is not byte-like data.")
+
+        # Validate key and value.
+        try:
+            value_from_db = self.__db.get_in_invoke(key.encode())
+            if value != value_from_db.decode():
+                return SCOREResponse.exception("Internal DB error.")
+
+        # Handle exceptions.
+        except TypeError:
+            return SCOREResponse.exception("Key or value is not byte-like data.")
+
+        except KeyError:
+            return SCOREResponse.exception("DB do not Have such a key.")
+
+        # Succeed to operate. Return successful message.
+        log_func("Succeed to execute invoke_foo1.")
+        return SCOREResponse.succeed()
 
     def query(self, query_request):
         """ contract verify
@@ -225,10 +253,3 @@ class LocalDB:
         byte_key = bytes(str(key), self.DB_ENCODING)
         byte_value = bytes(str(value), self.DB_ENCODING)
         self.db.Put(byte_key, byte_value)
-
-
-
-
-
-
-

@@ -40,6 +40,14 @@
             "user_id":"string" ,
             "contract_id":"string"
           }
+      },
+      {
+        "method":"tmp",
+        "params": {
+          "key":"string",
+          "value":"string"
+        },
+        "description":"Example of function in invoke."
       }
     ]
   },
