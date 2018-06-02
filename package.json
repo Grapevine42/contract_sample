@@ -17,7 +17,7 @@
     "query":[
       {
         "method":"get_user_contracts",
-        "params":{"tx_hash":"user_id"},
+        "params":{"tx_hash":"string"},
         "description":"Issue Certificate"
       }
     ],
