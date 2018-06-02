@@ -49,7 +49,7 @@ class UserScore(ScoreBase):
 
         try:
             # Store string as value. And key and value must be BYTE type, not only string or object.
-            self.__db.put(key.encode(), value.encode())
+            self.__db.put(self, key.encode(), value.encode())
         except TypeError:
             return SCOREResponse.exception("key or value is not byte-like data.")
 
