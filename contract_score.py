@@ -222,6 +222,24 @@ class UserScore(ScoreBase):
 
         return contract_list
 
+    def query_tmp(self, log_func, id, params):
+
+        key = params["key"]
+        log_func("Begin query_foo1.")
+
+        try:
+            data = self.__db.get_in_query(key.encode())
+
+            result = {"data": data.decode("utf-8")}
+            log_func(f'Queried data: {result}')
+            return SCOREResponse.succeed("Succeed to query.", result)
+
+        except TypeError:
+            return SCOREResponse.exception("Key or value is not byte-like data.")
+
+        except KeyError:
+            return SCOREResponse.exception("DB do not Have such a key.")
+
 
 class LocalDB:
 
