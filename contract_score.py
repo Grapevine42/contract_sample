@@ -17,9 +17,6 @@ class UserScore(ScoreBase):
     # for find last index
     LAST_INDEX_KEY = 'last_index'
 
-    # json keys
-    KEY = "key"
-    VALUE = "value"
 
     def __init__(self, info=None):
         """init score dir
