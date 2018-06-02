@@ -17,27 +17,11 @@
     "query":[
       {
         "method":"get_user_contracts",
-        "params":{"tx_hash":"string"},
+        "params":{"tx_hash":"user_id"},
         "description":"Issue Certificate"
-      },
-      {
-        "method":"query_foo1",
-        "params": {
-          "key":"string",
-          "value":"string"
-        },
-        "description":"Example of function in invoke."
       }
     ],
     "invoke":[
-      {
-        "method":"invoke_foo1",
-        "params": {
-          "key":"string",
-          "value":"string"
-        },
-        "description":"Example of function in invoke."
-      },
       {
         "method":"propose",
         "params":
@@ -56,14 +40,6 @@
             "user_id":"string" ,
             "contract_id":"string"
           }
-      },
-      {
-        "method":"tmp",
-        "params": {
-          "key":"string",
-          "value":"string"
-        },
-        "description":"Example of function in invoke."
       }
     ]
   },
