@@ -22,8 +22,10 @@
       },
       {
         "method":"query_tmp",
-        "params":{"key":"string"},
-        "description":"Issue Certificate"
+        "params": {
+          "key":"string"
+        },
+        "description":"Example of function in query."
       }
     ],
     "invoke":[
