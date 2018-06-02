@@ -30,6 +30,14 @@
     ],
     "invoke":[
       {
+        "method":"invoke_foo1",
+        "params": {
+          "key":"string",
+          "value":"string"
+        },
+        "description":"Example of function in invoke."
+      },
+      {
         "method":"propose",
         "params":
            {
